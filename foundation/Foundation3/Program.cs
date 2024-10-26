@@ -1,9 +1,18 @@
 using System;
-
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello Foundation3 World!");
+        var activities = new List<Activity>
+        {
+            new RunningActivity(new DateTime(2022, 11, 3), 30, 4.8),
+            new CyclingActivity(new DateTime(2022, 11, 4), 45, 20),
+            new SwimmingActivity(new DateTime(2022, 11, 5), 35, 40)
+        };
+
+        foreach (var activity in activities)
+        {
+            Console.WriteLine(activity.GetSummary());
+        }
     }
 }
